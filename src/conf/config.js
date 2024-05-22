@@ -1,4 +1,4 @@
-import { Client, Databases, Query, Storage } from "appwrite";
+import { Client, Databases, Query, Storage, ID } from "appwrite";
 import conf from "./conf";
 
 export class databaseService{
@@ -74,10 +74,46 @@ export class databaseService{
          
          return true
        } catch (error) {
-        console.log("Appwrite service Error:: dlete post()", error)
+        console.log("Appwrite service Error:: Deletepost()", error)
         return false
        }
      }
+
+    
+    //  Storage Service
+
+    async uploadFile(file){
+       try {
+       return await this.bucket.createFile(
+       conf.appwriteBucketId,
+       ID.unique(),
+       file
+       )
+       } catch (error) {
+        console.log("Appwrite service Error:  uploadFIle()", error)
+       }
+    }
+
+    async deleteFile(fileId){
+       try {
+       this.bucket.deleteFile(
+       conf.appwriteBucketId,
+       fileId
+       )
+       } catch (error) {
+        console.log("Appwrite service Error: deleteFile()", error)
+       }
+    }
+
+    getFilePreview(fileId){
+      return this.bucket.getFilePreview(
+        conf.appwriteBucketId,
+        fileId,
+      ).href
+    }
+
 }
 
 
+const service =  new databaseService()
+export default service
