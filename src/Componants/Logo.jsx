@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Allposts() {
+function Logo({width = '100%'}) {
   return (
     <div>
-     all posts 
+      Logo
     </div>
   )
 }
 
-export default Allposts
+export default Logo

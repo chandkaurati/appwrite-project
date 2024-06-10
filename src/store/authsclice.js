@@ -4,9 +4,9 @@ const initialState = {
      status: false,
      userData:null
 }
-
+ 
 const authSclice = createSlice({
-    name :  "auth",
+    name : "auth",
     initialState,
     reducers:{
        login : (state,action)=>{
