@@ -6,7 +6,6 @@ import Input from './Input'
 import Logo from './Logo'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
-import { data } from 'autoprefixer'
 import {login} from '../store/authsclice'
  
 function Signup() {
