@@ -44,7 +44,7 @@ export default function Postform ({post}){
       }else {
          const file = await appwriteService.uploadFile(data.featuredImage[0])
          if(file){
-            const fileid = fiel.$id
+            const fileid = file.$id
             data.featuredImage = fileid
             const dbPost =  await appwriteService.createPost({...data, userId : userData.$id})
 

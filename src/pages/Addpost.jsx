@@ -1,9 +1,12 @@
 import React from 'react'
-
+import Container from '../Componants/Container/Container'
+import Postform from '../Componants/post-form/postform'
 function Addpost() {
   return (
     <div>
-      addpost
+      <Container>
+        <Postform/>
+      </Container>
     </div>
   )
 }

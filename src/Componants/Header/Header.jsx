@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import LogoutButton from './LogoutButton'
 
 function Header() {
-    const authStatus = useSelector((state)=> state.status)
+    const authStatus = useSelector(( state)=> state.status)
     const navigate = useNavigate()
     const navItems = [
         {

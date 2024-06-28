@@ -32,7 +32,7 @@ export class databaseService{
 
      async createPost({title, slug, content, featuredImage, status, userId}){
       try {
-         return await this.databases.createDocument(
+          return await this.databases.createDocument(
            conf.appwriteDatabaseId,
            conf.appwriteCollectionId,
            {
@@ -87,8 +87,8 @@ export class databaseService{
        ID.unique(),
        file
        )
-       } catch (error) {
-        console.log("Appwrite service Error:  uploadFIle()", error)
+       }catch (error) {
+       console.log("Appwrite service Error:  uploadFIle()", error)
        }
     }
 
@@ -106,7 +106,7 @@ export class databaseService{
     getFilePreview(fileId){
       return this.bucket.getFilePreview(
         conf.appwriteBucketId,
-        fileId,
+        fileId,  
       ).href
     }
 
